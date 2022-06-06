@@ -13,7 +13,7 @@ export class TodosService {
     return this.todoRepo.find();
   }
   //find by id
-  async getById(id: number) {
+  async getById(id) {
     const todo = await this.todoRepo.findOne(id);
     if (todo) {
       return todo;
@@ -27,7 +27,7 @@ export class TodosService {
     return newTodo;
   }
   // update
-  async updateTodo(id: number, post: UpdateTodoDto) {
+  async updateTodo(id, post: UpdateTodoDto) {
     await this.todoRepo.update(id, post);
     const updatedTodo = await this.todoRepo.findOne(id);
     if (updatedTodo) {
