@@ -4,6 +4,7 @@ import Joi from 'joi';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
+import { TodosModule } from './todos/todos.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { DatabaseModule } from './database/database.module';
       }),
     }),
     DatabaseModule,
+    TodosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
